@@ -2,7 +2,15 @@ import { motion } from 'framer-motion'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 import { skillGroups } from '../../data/skills'
-import * as LucideIcons from 'lucide-react'
+import { Code2, Layout, Server, Database, Cpu } from 'lucide-react'
+
+const iconMap = {
+    Code2,
+    Layout,
+    Server,
+    Database,
+    Cpu
+}
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,7 +53,7 @@ export function Skills() {
                     viewport={{ once: true, margin: '-100px' }}
                 >
                     {skillGroups.map((group) => {
-                        const Icon = LucideIcons[group.icon] || LucideIcons.Code2
+                        const Icon = iconMap[group.icon] || Code2
                         return (
                             <motion.div
                                 key={group.category}

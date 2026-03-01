@@ -9,4 +9,14 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-utils': ['framer-motion', 'lucide-react'],
+        },
+      },
+    },
+  },
 })

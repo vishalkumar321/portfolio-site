@@ -4,7 +4,14 @@ import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
 import { Container } from '../ui/Container'
 import { problemSolvingData } from '../../data/problemSolving'
-import * as LucideIcons from 'lucide-react'
+import { Terminal, Code2, Binary, Trophy } from 'lucide-react'
+
+const iconMap = {
+    Terminal,
+    Code2,
+    Binary,
+    Trophy
+}
 
 function AnimatedCounter({ value, suffix }) {
     const ref = useRef(null)
@@ -37,7 +44,7 @@ function AnimatedCounter({ value, suffix }) {
 }
 
 function StatCard({ stat, index }) {
-    const Icon = LucideIcons[stat.icon] || LucideIcons.Terminal
+    const Icon = iconMap[stat.icon] || Terminal
 
     return (
         <motion.div
